@@ -1,0 +1,108 @@
+:root {
+    --bg-color: #f4f6f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.2s ease;
+
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    width: 90%;
+    max-width: 560px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+#counter {
+    font-size: 64px;
+    margin: 28px 0;
+    transition: transform 0.2s ease;
+}
+button {
+    padding: 12px 24px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:focus {
+    outline: 3px solid rgba(0, 123, 255, 0.25);
+    outline-offset: 2px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active, button.pressed {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12) inset;
+
+}
+
+#clickBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#resetBtn {
+    background-color: #1976d2;
+    color: white;
+}
+
+.theme-picker {
+    margin-top: 12px;
+}
+
+.theme-picker {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    .container { padding: 24px; max-width: 98%; }
+    #counter { font-size: 48px; }
+    button { padding: 10px 16px; }
+}
+
+.theme-btn {
+    background: #efefef;
+    color: #333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.theme-controls { /* removed */ }
+
+/* Theme backgrounds (set css var) */
+.theme-light { --bg-color: #f4f6f8; }
+.theme-blue { --bg-color: #e7f0ff; }
+.theme-dark { --bg-color: #1f2937; }
+
+/* Theme-specific container overrides for dark theme */
+.theme-dark { color: #f3f4f6; }
+.theme-dark .container { background: #111827; color: #f3f4f6; box-shadow: 0 4px 12px rgba(0,0,0,0.45); }
+.theme-dark #clickBtn { background-color: #e63946; }
+.theme-dark #resetBtn { background-color: #4ea1ff; }
+
+.theme-blue .container { background: white; color: #0f172a; }
